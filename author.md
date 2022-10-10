@@ -2,9 +2,9 @@
 
 Preencha os dados abaixo para identificar a autoria do trabalho.
 
-- Nome: *<insira seu nome aqui>*
-- Email: *<insira seu email aqui>*
-- Turma: *<insira sua turma aqui>*
+- Nome: *<Luís Eduardo de Oliveira Sales>*
+- Email: *<duduosales@hotmail.com>*
+- Turma: *<t01 - 2022.2>*
 
 # Indique quais métodos das classes abaixo foram implementados
 
