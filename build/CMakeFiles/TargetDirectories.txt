@@ -1,0 +1,2 @@
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/edit_cache.dir
