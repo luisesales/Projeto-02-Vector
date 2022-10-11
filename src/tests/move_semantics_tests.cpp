@@ -3,8 +3,8 @@
 #include<vector>
 
 #include "include/tm/test_manager.h"
-#include "../include/vector.h"
-#include "main.h"
+#include "../vector/vector.h"
+#include "./main.h"
 
 
 // =============================================================
@@ -12,13 +12,13 @@
 // =============================================================
 
 // Move Ctro.
-#define MOVE_CTRO YES
+#define MOVE_CTRO NO
 // Move assignment operator.
-#define MOVE_ASSIGNMENT YES
+#define MOVE_ASSIGNMENT NO
 // Emplace back operator.
-#define EMPLACE_BACK_INT YES
+#define EMPLACE_BACK_INT NO
 // Emplace back operator.
-#define EMPLACE_BACK_STRING YES
+#define EMPLACE_BACK_STRING NO
 
 
 void run_move_semantics_tests( void )

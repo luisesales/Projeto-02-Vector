@@ -5,7 +5,7 @@
 #include <iostream>
 
 #include "include/tm/test_manager.h"
-#include "../include/vector.h"
+#include "../vector/vector.h"
 
 // ============================================================================
 // TESTING VECTOR AS A CONTAINER OF INTEGERS
@@ -14,63 +14,63 @@
 // Test default ctro's size and capacity initial values.
 #define DEFAULT_CTRO YES
 // Ctro that receives a size as argument. It crates an empty vector with size elements.
-#define CTRO_SIZE YES
+#define CTRO_SIZE NO
 // Ctro that receives a list of values as its initial value.
-#define CTRO_SIZE YES
+#define CTRO_SIZE NO
 // Ctro that receives a range of values as its initial value.
-#define CTRO_RANGE YES
+#define CTRO_RANGE NO
 // Copy Ctro: creates a vector based on another passed in as argument.
-#define CTRO_COPY YES
+#define CTRO_COPY NO
 // Assign operator, as in vec1 = vec2;
-#define ASSIGN_OP YES
+#define ASSIGN_OP NO
 // Initializer list assignment, as in vector<int> vec = { 1, 2, 3 };
-#define INITIALISZER_ASSIGNMENT YES
+#define INITIALISZER_ASSIGNMENT NO
 // Size method
-#define SIZE YES
+#define SIZE NO
 // Clear method
-#define CLEAR YES
+#define CLEAR NO
 // Push back method
-#define PUSH_BACK YES
+#define PUSH_BACK NO
 // Pop back method
-#define POP_BACK YES
+#define POP_BACK NO
 // Reference front, as in vec.front() = 3;
-#define REF_FRONT YES
+#define REF_FRONT NO
 // Const front, as in x = vec.front();
-#define CONST_FRONT YES
+#define CONST_FRONT NO
 // Reference back, as in vec.back() = 3;
-#define REF_BACK YES
+#define REF_BACK NO
 // Const back, as in x = vec.back();
-#define CONST_BACK YES
+#define CONST_BACK NO
 // Assign `count` elements with `value` to the vector: vec.assign(3,value);
-#define ASSIGN_COUNT_VALUES YES
+#define ASSIGN_COUNT_VALUES NO
 // Const index access operator, as in x = vec[3];
-#define CONST_INDEX_OP YES
+#define CONST_INDEX_OP NO
 // Reference index access operator, as in vec[3] = x;
-#define REF_INDEX_OP YES
+#define REF_INDEX_OP NO
 // Const index access operator with bounds check, as in x = vec.at(3);
-#define CONST_AT_INDEX YES
+#define CONST_AT_INDEX NO
 // Reference index access operator with bounds check, as in vec.at(3) = x;
-#define REF_AT_INDEX YES
+#define REF_AT_INDEX NO
 // Reserve methos, that increases the vector storage capacity explicitly.
-#define RESERVE YES
+#define RESERVE NO
 // Storage capacity of the vector.
-#define CAPACITY YES
+#define CAPACITY NO
 // Shrink storage memory so that the capacity is the same as the # of elements currently stored.
-#define SHRINK YES
+#define SHRINK NO
 // Equality operator
-#define EQUAL_OP YES
+#define EQUAL_OP NO
 // Different operator
-#define DIFFERENT_OP YES
+#define DIFFERENT_OP NO
 // Insert a single values before pos
-#define INSERT_SINGLE_VALUE YES
+#define INSERT_SINGLE_VALUE NO
 // Insert a range of elements before pos
-#define INSERT_RANGE YES
+#define INSERT_RANGE NO
 // Insert a initializer list of elements before pos
-#define INSERT_INITIALIZER YES
+#define INSERT_INITIALIZER NO
 // Erase a range of elements begining at pos
-#define ERASE_RANGE YES
+#define ERASE_RANGE NO
 // Erase a single values at pos
-#define ERASE_SINGLE_VALUE YES
+#define ERASE_SINGLE_VALUE NO
 
 /// Tests the basic operations with a vector of integers.
 template <typename T, size_t S>

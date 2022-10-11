@@ -1,4 +1,3 @@
-
 #ifndef _VECTOR_H_
 #define _VECTOR_H_
 
@@ -50,20 +49,19 @@ namespace sc {
             vector(const vector & target){
                 v_capacity = target.size();
                 v_data = new T[v_capacity];
-                v_end = v_capacity;  // Array começa vazio.
-                // Copy the elements from the il into the array.
+                v_end = v_capacity;  // Vector Starts Full
+                // Copy the elements from the target into the Vector
                 std::copy(target.begin(),target.end(), v_data);
             }
             // Inicialize the vector from a initializer list
             vector( std::initializer_list<T> target){
                 v_capacity = target.size();
                 v_data = new T[v_capacity];
-                v_end = v_capacity;  // Array começa vazio.
-                // Copy the elements from the il into the array.
+                v_end = v_capacity;  // Vector Starts Full
+                // Copy the elements from the target into the Vector
                 std::copy(target.begin(),target.end(), v_data);
             }
 
-            vector( vector && );
             template < typename InputItr >
             vector( InputItr, InputItr );
 
@@ -71,28 +69,24 @@ namespace sc {
             vector & operator=( const vector & target){
                 v_capacity = target.size();
                 v_data = new T[v_capacity];
-                v_end = v_capacity;  // Array começa vazio.
-                // Copy the elements from the il into the array.
+                v_end = v_capacity;  // Vector Starts Fuçç
+                // Copy the elements from the target into the Vector.
                 std::copy(target.begin(),target.end(), v_data);
             }
 
 
-            vector & operator=( vector && target){
-                vector(target);
-            }
-
             //=== [II] ITERATORS
             iterator begin( void ){
-                return &v_data[0];
+                return iterator{ &v_data[ 0 ] };
             };
             iterator end( void ){
-                return &v_data[v_end];
+                return iterator{ &v_data[ v_end ] };
             }
             const_iterator cbegin( void ) const{
-                return &v_data[0];
+                return iterator{ &v_data[ 0 ] };
             }
             const_iterator cend( void ) const{
-                return &v_data[v_end];
+                return iterator{ &v_data[ v_end ] };
             }
 
             // [III] Capacity
@@ -116,13 +110,13 @@ namespace sc {
             }
             void push_front( const_reference value){
                 if (full()) {
-                    v_capacity = v_capacity + 2^s++;
+                    increase_size();
                 }
                 v_data[] = value;
             }
             void push_back( const_reference value){
                  if (full()) {
-                    v_capacity = v_capacity + 2^s++;
+                    increase_size();
                 }
                 v_data[m_end++] = value;
             }
@@ -131,18 +125,14 @@ namespace sc {
 
             iterator insert( iterator pos_ , const_reference value_ ){
                 if (pos < v_end){
-                    for (size_type i{v_end}; i > 0; --i) m_data[i] = m_data[i - 1];
+                    for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
                 }
-                else{
-                     
-                    for (size_type i{m_end}; i < pos; ++i) v_data[i] = value_type();
-                
-                 
-                } // ==> Case C: [m_capacity,infinito)
-                    
+                else if(pos > v_capacity){                    
+                    increase_size(pos);              
+                }                     
                 v_data[pos] = value;
                     // Update size.
-                v_end = std::max(pos+1,m_end+1);
+                v_end = std::max(pos+1,v_end+1);
             };
             iterator insert( const_iterator pos_ , const_reference value_ );
 
@@ -189,33 +179,32 @@ namespace sc {
                 return &v_data[0];
             }
             const_reference operator[](size_type pos) const {
-                return v_data[pos];
+                return &v_data[pos];
             }
             reference operator[](size_type pos) {
-                return v_data[pos];
+                return &v_data[pos];
             }
             const_reference at( size_type ) const;
             reference at( size_type );
             pointer data( void ){
-                return &v_data;
+                return v_data;
             }
             const_reference data( void ) const{
-                return v_data;
+                return &v_data;
             }
 
             
 
             // [VII] Friend functions.
             friend std::ostream & operator<<( std::ostream & os_, const vector<T> & v_ )
-            {
-                // O que eu quero imprimir???
+            {                
                 os_ << "{ ";
-                for( auto i{0u} ; i < v_.m_capacity ; ++i )
+                for( auto i{0} ; i < v_.v_capacity ; ++i )
                 {
-                    if ( i == v_.m_end ) os_ << "| ";
-                    os_ << v_.m_storage[ i ] << " ";
+                    if ( i == v_.v_end ) os_ << "| ";
+                    os_ << v_.v_storage[ i ] << " ";
                 }
-                os_ << "}, m_end=" << v_.m_end << ", m_capacity=" << v_.m_capacity;
+                os_ << "}, Espaço Usado=" << v_.v_end << ", Espaço Alocado=" << v_.v_capacity;
 
                 return os_;
             }
@@ -231,6 +220,12 @@ namespace sc {
             }
 
         private:
+
+            void increase_size( size_type amount = v_capacity ){
+                v_capacity = amount + 2^s++;
+                for (size_type i{v_end}; i < v_capacity; ++i) v_data[i] = value_type();
+            }
+
             bool full( void ) const{
                 return v_end == v_capacity;
             }
