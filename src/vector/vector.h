@@ -32,6 +32,16 @@ namespace sc {
             size_type v_end;        //!< How many elements currently stored in the array.
             pointer v_data;         //!< Stores the data.
             size_type s;
+
+            void increase_size( size_type amount = v_capacity ){
+                v_capacity = amount + pow(2, s++);
+                for (size_type i{v_end}; i < v_capacity; ++i) v_data[i] = value_type();
+            }
+
+            bool full( void ) const{
+                return v_end == v_capacity;
+            }
+            
         public:
             //=== [I] SPECIAL MEMBERS (6 OF THEM)
 
@@ -41,7 +51,7 @@ namespace sc {
                 v_capacity = cp;
                 v_end = 0; 
             }
-            //Destrutor do Vecotr
+            //Destrutor do Vector
             virtual ~vector( void ){
                  if (v_data != nullptr) delete[] v_data;
             }
@@ -106,7 +116,7 @@ namespace sc {
             void clear(void){
                 for(size_type i{0};i<v_end; ++i)
                     v_data[i].~T();
-                m_end = 0;
+                v_end = 0;
             }
             void push_front( const_reference value){
                 if (full()) {
@@ -118,7 +128,7 @@ namespace sc {
                  if (full()) {
                     increase_size();
                 }
-                v_data[m_end++] = value;
+                v_data[v_end++] = value;
             }
             void pop_back( void );
             void pop_front( void );
@@ -167,13 +177,13 @@ namespace sc {
 
             // [V] Element access
             const_reference back( void ) const{
-                return &v_data[m_end-1];
+                return &v_data[v_end-1];
             }
             const_reference front( void ) const{
                 return &v_data[0];
             }
             reference back( void ){
-                return &v_data[m_end-1];
+                return &v_data[v_end-1];
             }
             reference front( void ){
                 return &v_data[0];
@@ -219,21 +229,6 @@ namespace sc {
                 swap( first_.m_storage,  second_.m_storage  );
             }
 
-        private:
-
-            void increase_size( size_type amount = v_capacity ){
-                v_capacity = amount + pow(2, s);
-                s++;
-                for (size_type i{v_end}; i < v_capacity; ++i) v_data[i] = value_type();
-            }
-
-            bool full( void ) const{
-                return v_end == v_capacity;
-            }
-
-            size_type m_end;                //!< The list's current size (or index past-last valid element).
-            size_type m_capacity;           //!< The list's storage capacity.
-            std::unique_ptr<T[]> m_storage; //!< The list's data storage area.
     };
 
     // [VI] Operators
