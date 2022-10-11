@@ -10,7 +10,7 @@
 #include <cassert>      // assert()
 #include <limits>       // std::numeric_limits<T>
 #include <cstddef>      // std::size_t
-
+#include <cmath>        // pow function
 /// Sequence container namespace.
 namespace sc {
     template < typename T >
@@ -222,7 +222,8 @@ namespace sc {
         private:
 
             void increase_size( size_type amount = v_capacity ){
-                v_capacity = amount + 2^s++;
+                v_capacity = amount + pow(2, s);
+                s++;
                 for (size_type i{v_end}; i < v_capacity; ++i) v_data[i] = value_type();
             }
 
