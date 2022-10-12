@@ -5,7 +5,7 @@
 #include <array>
 
 #include "include/tm/test_manager.h"
-#include "../include/vector.h"
+#include "../src/vector/vector.h"
 
 #define which_lib sc
 // To run tests with the STL's vector, uncomment the line below.

@@ -11,6 +11,7 @@
 #include <limits>       // std::numeric_limits<T>
 #include <cstddef>      // std::size_t
 #include <cmath>        // pow function
+#include <string.h>
 /// Sequence container namespace.
 namespace sc {
 /// Implements tha infrastrcture to support a bidirectional iterator.
@@ -45,89 +46,98 @@ namespace sc {
             /// Pre-increment operator.
             iterator operator++( void ){
                 // TODO
+                m_ptr++;
                 return *this;
             }
 
             /// Post-increment operator.
             iterator operator++( int ){
                 // TODO
-                iterator dummy;
+                iterator dummy  = m_ptr++;
                 return dummy;
             }
 
             /// Pre-decrement operator.
             iterator operator--( void ){
                 // TODO
+                m_ptr--;
                 return *this;
             }
 
             /// Post-decrement operator.
             iterator operator--( int ){
                 // TODO
-                iterator dummy;
+                 iterator dummy  = m_ptr--;
                 return dummy;
             }
 
             iterator& operator+=(difference_type offset){
                 iterator &it{*this};
+                it+=offset;
                 // TODO
                 return it;
             }
             iterator& operator-=(difference_type offset){
                 iterator &it{*this};
+                it-=offset;
                 // TODO
                 return it;
             }
 
             friend bool operator<(const iterator& ita, const iterator& itb){
                 // TODO
-                return true;
+                return ita.m_ptr < itb.m_ptr
             }
             friend bool operator>(const iterator& ita, const iterator& itb){
                 // TODO
-                return true;
+                return ita.m_ptr > itb.m_ptr
             }
             friend bool operator>=(const iterator& ita, const iterator& itb){
                 // TODO
-                return true;
+                return ita.m_ptr >= itb.m_ptr
             }
             friend bool operator<=(const iterator& ita, const iterator& itb){
                 // TODO
-                return true;
+                return ita.m_ptr <= itb.m_ptr
             }
 
             friend iterator operator+( difference_type offset, iterator it ){
                 // TODO
-                iterator dummy;
+                iterator dummy = offset + it;
                 return dummy;
             }
             friend iterator operator+( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy;
+                iterator dummy = it + offset;
                 return dummy;
             }
             friend iterator operator-( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy;
+                iterator dummy = it - offset;
+                return dummy;
+            }            
+            friend iterator operator-(difference_type offset , iterator it){
+                // TODO
+                iterator dummy = offset - it;
                 return dummy;
             }
 
             /// Equality operator.
             bool operator==( const iterator & rhs_ ) const {
                 // TODO
-                return true;
+                return m_ptr == rhs_.m_ptr;
             }
 
             /// Not equality operator.
             bool operator!=( const iterator & rhs_ ) const {
                 // TODO
-                return true;
+                return m_ptr != rhs_.m_ptr;
             }
 
             /// Returns the difference between two iterators.
             difference_type operator-( const iterator & rhs_ ) const {
                 // TODO
-                return 0;
+                return m_ptr - rhs_.m_ptr;
             }
 
             /// Stream extractor operator.
@@ -156,14 +166,17 @@ namespace sc {
             using iterator = MyForwardIterator< value_type >; //!< The iterator, instantiated from a template class.
             using const_iterator = MyForwardIterator< const value_type >; //!< The const_iterator, instantiated from a template class.
         private:
-            size_type v_capacity;   //!< Storge capacity.
+            size_type v_capacity;   //!< Storage capacity.
             size_type v_end;        //!< How many elements currently stored in the array.
             pointer v_data;         //!< Stores the data.
-            size_type s;
+            size_type s{0};
 
-            void increase_size( size_type amount = v_capacity ){
-                v_capacity = amount + pow(2, s++);
-                for (size_type i{v_end}; i < v_capacity; ++i) v_data[i] = value_type();
+            void increase_size( size_type amount = 0){
+                v_capacity += amount + pow(2, s++);
+                pointer new_data = new T[v_capacity];
+                std::copy(this->begin(),this->end(),new_data);    
+                ~vector();
+                v_data = new_data;                
             }
 
             bool full( void ) const{
@@ -276,28 +289,28 @@ namespace sc {
             }
 
             iterator insert( iterator pos_ , const_reference value_ ){
-                if (pos < v_end){
+                if (pos_ < v_end){
                     for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
                 }
-                else if(pos > v_capacity){                    
-                    increase_size(pos);              
+                else if(pos_ > v_capacity){                    
+                    increase_size(pos_);              
                 }                     
-                v_data[pos] = value;
+                v_data[pos_] = value_;
                     // Update size.
-                v_end = std::max(pos+1,v_end+1);
-                return iterator{ &v_data[pos] };
+                v_end = std::max(pos_+1,v_end+1);
+                return iterator{ &v_data[pos_] };
             };
             iterator insert( const_iterator pos_ , const_reference value_ ){
-                 if (pos < v_end){
+                 if (pos_ < v_end){
                     for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
                 }
-                else if(pos > v_capacity){                    
-                    increase_size(pos);              
+                else if(pos_ > v_capacity){                    
+                    increase_size(pos_);              
                 }                     
-                v_data[pos] = value;
+                v_data[pos_] = value_;
                     // Update size.
-                v_end = std::max(pos+1,v_end+1);
-                return iterator{ &v_data[pos] };
+                v_end = std::max(pos_+1,v_end+1);
+                return iterator{ &v_data[pos_] };
             }
 
             template < typename InputItr >
@@ -328,7 +341,7 @@ namespace sc {
             iterator erase( iterator first, iterator last ){
                 v_end--;
                 for (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-                v_data[v_end].~T()
+                v_data[v_end].~T();
                 return iterator{ &v_data[pos] };
             }
             iterator erase( const_iterator first, const_iterator last );
@@ -336,13 +349,13 @@ namespace sc {
             iterator erase( const_iterator pos ){
                 v_end--;
                 ffor (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-                v_data[v_end].~T()
+                v_data[v_end].~T();
                 return iterator{ &v_data[pos] };
             }
             iterator erase( iterator pos ){
                 v_end--;
                 for (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-                v_data[v_end].~T()
+                v_data[v_end].~T();
                 return iterator{ &v_data[pos] };
             };
 
