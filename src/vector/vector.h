@@ -13,6 +13,134 @@
 #include <cmath>        // pow function
 /// Sequence container namespace.
 namespace sc {
+/// Implements tha infrastrcture to support a bidirectional iterator.
+    template < class T >
+    class MyForwardIterator {
+        public:
+            typedef MyForwardIterator iterator;   //!< Alias to iterator.
+            // Below we have the iterator_traits common interface
+            typedef std::ptrdiff_t difference_type; //!< Difference type used to calculated distance between iterators.
+            typedef T value_type;           //!< Value type the iterator points to.
+            typedef T* pointer;             //!< Pointer to the value type.
+            typedef T& reference;           //!< Reference to the value type.
+            typedef const T& const_reference;           //!< Reference to the value type.
+            typedef std::bidirectional_iterator_tag iterator_category; //!< Iterator category.
+
+            /*! Create an iterator around a raw pointer.
+             * \param pt_ raw pointer to the container.
+             */
+            MyForwardIterator( pointer pt=nullptr ) : m_ptr( pt ) { /* empty */ }
+
+            /// Access the content the iterator points to.
+            reference operator*( void ) const {  assert( m_ptr != nullptr ); return *m_ptr; }
+
+            /// Overloaded `->` operator.
+            pointer operator->( void ) const {   assert( m_ptr != nullptr ); return m_ptr; }
+
+            /// Assignment operator.
+            iterator & operator=( const iterator & ) = default;
+            /// Copy constructor.
+            MyForwardIterator( const iterator & ) = default;
+
+            /// Pre-increment operator.
+            iterator operator++( void ){
+                // TODO
+                return *this;
+            }
+
+            /// Post-increment operator.
+            iterator operator++( int ){
+                // TODO
+                iterator dummy;
+                return dummy;
+            }
+
+            /// Pre-decrement operator.
+            iterator operator--( void ){
+                // TODO
+                return *this;
+            }
+
+            /// Post-decrement operator.
+            iterator operator--( int ){
+                // TODO
+                iterator dummy;
+                return dummy;
+            }
+
+            iterator& operator+=(difference_type offset){
+                iterator &it{*this};
+                // TODO
+                return it;
+            }
+            iterator& operator-=(difference_type offset){
+                iterator &it{*this};
+                // TODO
+                return it;
+            }
+
+            friend bool operator<(const iterator& ita, const iterator& itb){
+                // TODO
+                return true;
+            }
+            friend bool operator>(const iterator& ita, const iterator& itb){
+                // TODO
+                return true;
+            }
+            friend bool operator>=(const iterator& ita, const iterator& itb){
+                // TODO
+                return true;
+            }
+            friend bool operator<=(const iterator& ita, const iterator& itb){
+                // TODO
+                return true;
+            }
+
+            friend iterator operator+( difference_type offset, iterator it ){
+                // TODO
+                iterator dummy;
+                return dummy;
+            }
+            friend iterator operator+( iterator it, difference_type offset ){
+                // TODO
+                iterator dummy;
+                return dummy;
+            }
+            friend iterator operator-( iterator it, difference_type offset ){
+                // TODO
+                iterator dummy;
+                return dummy;
+            }
+
+            /// Equality operator.
+            bool operator==( const iterator & rhs_ ) const {
+                // TODO
+                return true;
+            }
+
+            /// Not equality operator.
+            bool operator!=( const iterator & rhs_ ) const {
+                // TODO
+                return true;
+            }
+
+            /// Returns the difference between two iterators.
+            difference_type operator-( const iterator & rhs_ ) const {
+                // TODO
+                return 0;
+            }
+
+            /// Stream extractor operator.
+            friend std::ostream& operator<<( std::ostream& os_, const MyForwardIterator &p_ )
+            {
+                os_ << "[@ " << p_.m_ptr  << ": " << *p_.m_ptr << " ]" ;
+                return os_;
+            }
+
+        private:
+            pointer m_ptr; //!< The raw pointer.
+    };
+
     template < typename T >
     class vector
     {
@@ -73,7 +201,12 @@ namespace sc {
             }
 
             template < typename InputItr >
-            vector( InputItr, InputItr );
+            vector( InputItr begin, InputItr end){
+                v_capacity = end - begin;
+                v_data = new T[v_capacity];
+                v_end = v_capacity;
+                std::copy(begin,end, v_data);
+            };
 
             // Initialize the vector form the "=" operator using another vector
             vector & operator=( const vector & target){
@@ -122,7 +255,8 @@ namespace sc {
                 if (full()) {
                     increase_size();
                 }
-                v_data[] = value;
+                for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i-1];
+                v_data[0] = value;
             }
             void push_back( const_reference value){
                  if (full()) {
@@ -130,8 +264,16 @@ namespace sc {
                 }
                 v_data[v_end++] = value;
             }
-            void pop_back( void );
-            void pop_front( void );
+            void pop_back( void ){
+                v_data[v_end-1].~T();
+                v_end--;
+            }
+            void pop_front( void ){
+                v_end--;
+                for (size_type i{0}; i < v_end; i++) v_data[i] = v_data[i+1];
+                v_data[v_end].~T();
+                
+            }
 
             iterator insert( iterator pos_ , const_reference value_ ){
                 if (pos < v_end){
@@ -143,8 +285,20 @@ namespace sc {
                 v_data[pos] = value;
                     // Update size.
                 v_end = std::max(pos+1,v_end+1);
+                return iterator{ &v_data[pos] };
             };
-            iterator insert( const_iterator pos_ , const_reference value_ );
+            iterator insert( const_iterator pos_ , const_reference value_ ){
+                 if (pos < v_end){
+                    for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
+                }
+                else if(pos > v_capacity){                    
+                    increase_size(pos);              
+                }                     
+                v_data[pos] = value;
+                    // Update size.
+                v_end = std::max(pos+1,v_end+1);
+                return iterator{ &v_data[pos] };
+            }
 
             template < typename InputItr >
             iterator insert( iterator pos_ , InputItr first_, InputItr last_ );
@@ -154,7 +308,9 @@ namespace sc {
             iterator insert( iterator pos_, const std::initializer_list< value_type >& ilist_ );
             iterator insert( const_iterator pos_, const std::initializer_list< value_type >& ilist_ );
 
-            void reserve( size_type );
+            void reserve( size_type pos ){
+                increase_size(pos);
+            };
             void shrink_to_fit( void ){
                 if(v_capacity > v_end){
                     for(size_t i{v_end}; i < v_capacity;i++){
@@ -169,11 +325,26 @@ namespace sc {
             template < typename InputItr >
             void assign( InputItr first, InputItr last );
 
-            iterator erase( iterator first, iterator last );
+            iterator erase( iterator first, iterator last ){
+                v_end--;
+                for (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
+                v_data[v_end].~T()
+                return iterator{ &v_data[pos] };
+            }
             iterator erase( const_iterator first, const_iterator last );
 
-            iterator erase( const_iterator pos );
-            iterator erase( iterator pos );
+            iterator erase( const_iterator pos ){
+                v_end--;
+                ffor (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
+                v_data[v_end].~T()
+                return iterator{ &v_data[pos] };
+            }
+            iterator erase( iterator pos ){
+                v_end--;
+                for (iterator i{last}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
+                v_data[v_end].~T()
+                return iterator{ &v_data[pos] };
+            };
 
             // [V] Element access
             const_reference back( void ) const{
@@ -194,8 +365,12 @@ namespace sc {
             reference operator[](size_type pos) {
                 return &v_data[pos];
             }
-            const_reference at( size_type ) const;
-            reference at( size_type );
+            const_reference at( size_type pos) const{
+                return &v_data[pos];
+            }
+            reference at( size_type pos){
+                return &v_data[pos];
+            }
             pointer data( void ){
                 return v_data;
             }
