@@ -1,4 +1,4 @@
-# Install script for directory: /home/petcc-05/Documentos/Monitoria LP1/Luís Eduardo/T02-vector-individual-luisesales/source/tests
+# Install script for directory: /home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/source/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

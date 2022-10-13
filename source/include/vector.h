@@ -53,7 +53,8 @@ namespace sc {
             /// Post-increment operator.
             iterator operator++( int ){
                 // TODO
-                iterator dummy  = m_ptr++;
+                iterator dummy = m_ptr;
+                m_ptr++;
                 return dummy;
             }
 
@@ -63,11 +64,146 @@ namespace sc {
                 m_ptr--;
                 return *this;
             }
-
             /// Post-decrement operator.
             iterator operator--( int ){
                 // TODO
-                 iterator dummy  = m_ptr--;
+                 iterator dummy = m_ptr--;
+                return dummy;
+            }
+
+            iterator& operator+=(difference_type offset){
+                iterator &it{*this};
+                it+=offset;
+                // TODO
+                return it;
+            }
+            iterator& operator-=(difference_type offset){
+                iterator &it{*this};
+                it-=offset;
+                // TODO
+                return it;
+            }
+
+            friend bool operator<(const iterator& ita, const iterator& itb){
+                // TODO
+                return ita.m_ptr < itb.m_ptr;
+            }
+            friend bool operator>(const iterator& ita, const iterator& itb){
+                // TODO
+                return ita.m_ptr > itb.m_ptr;
+            }
+            friend bool operator>=(const iterator& ita, const iterator& itb){
+                // TODO
+                return ita.m_ptr >= itb.m_ptr;
+            }
+            friend bool operator<=(const iterator& ita, const iterator& itb){
+                // TODO
+                return ita.m_ptr <= itb.m_ptr;
+            }
+
+            friend iterator operator+( difference_type offset, iterator it ){
+                // TODO
+                iterator dummy = offset + it;
+                return dummy;
+            }
+            friend iterator operator+( iterator it, difference_type offset ){
+                // TODO
+                iterator dummy = it + offset;
+                return dummy;
+            }
+            friend iterator operator-( iterator it, difference_type offset ){
+                // TODO
+                iterator dummy = it - offset;
+                return dummy;
+            }            
+            friend iterator operator-(difference_type offset , iterator it){
+                // TODO
+                iterator dummy = offset - it;
+                return dummy;
+            }
+
+            /// Equality operator.
+            bool operator==( const iterator & rhs_ ) const {
+                // TODO
+                return m_ptr == rhs_.m_ptr;
+            }
+
+            /// Not equality operator.
+            bool operator!=( const iterator & rhs_ ) const {
+                // TODO
+                return m_ptr != rhs_.m_ptr;
+            }
+
+            /// Returns the difference between two iterators.
+            difference_type operator-( const iterator & rhs_ ) const {
+                // TODO
+                return m_ptr - rhs_.m_ptr;
+            }
+
+            /// Stream extractor operator.
+            friend std::ostream& operator<<( std::ostream& os_, const MyForwardIterator &p_ )
+            {
+                os_ << "[@ " << p_.m_ptr  << ": " << *p_.m_ptr << " ]" ;
+                return os_;
+            }
+
+        private:
+            pointer m_ptr; //!< The raw pointer.
+    };
+
+    template < class T >
+    class MyForwardConstIterator {
+        public:
+            typedef MyForwardConstIterator iterator;   //!< Alias to iterator.
+            // Below we have the iterator_traits common interface
+            typedef std::ptrdiff_t difference_type; //!< Difference type used to calculated distance between iterators.
+            typedef T value_type;           //!< Value type the iterator points to.
+            typedef const T* pointer;             //!< Pointer to the value type.
+            typedef T& reference;           //!< Reference to the value type.
+            typedef const T& const_reference;           //!< Reference to the value type.
+            typedef std::bidirectional_iterator_tag iterator_category; //!< Iterator category.
+
+            /*! Create an iterator around a raw pointer.
+             * \param pt_ raw pointer to the container.
+             */
+            MyForwardConstIterator( pointer pt=nullptr ) : m_ptr( pt ) { /* empty */ }
+
+            /// Access the content the iterator points to.
+            reference operator*( void ) const {  assert( m_ptr != nullptr ); return *m_ptr; }
+
+            /// Overloaded `->` operator.
+            pointer operator->( void ) const {   assert( m_ptr != nullptr ); return m_ptr; }
+
+            /// Assignment operator.
+            iterator & operator=( const iterator & ) = default;
+            /// Copy constructor.
+            MyForwardConstIterator( const iterator & ) = default;
+
+            /// Pre-increment operator.
+            iterator operator++( void ){
+                // TODO
+                m_ptr++;
+                return *this;
+            }
+
+            /// Post-increment operator.
+            iterator operator++( int ){
+                // TODO
+                iterator dummy = m_ptr;
+                m_ptr++;
+                return dummy;
+            }
+
+            /// Pre-decrement operator.
+            iterator operator--( void ){
+                // TODO
+                m_ptr--;
+                return *this;
+            }
+            /// Post-decrement operator.
+            iterator operator--( int ){
+                // TODO
+                 iterator dummy = m_ptr--;
                 return dummy;
             }
 
@@ -236,7 +372,7 @@ namespace sc {
                 return iterator(&v_data[0]);
             }
             iterator end( void ){
-                return iterator(&v_data[v_end-1]);
+                return iterator(&v_data[v_end]);
             }
             const_iterator cbegin( void ) const{
                 return const_iterator(&v_data[0]);
@@ -340,45 +476,78 @@ namespace sc {
 
             iterator erase( iterator first, iterator last ){
                 iterator dummy = first;
-                while(last != v_end){
-                    *first = *last;
-                    first++;
-                    last++;
+                if(first >= this->begin() || last <= this->end()){    
+                    while(last < v_end){
+                        *first = *last;
+                        first++;
+                        last++;
+                    }
+                    v_end -= last - first;  
+                    return dummy;                             
                 }
-                v_end -= last - first;
-                return dummy;
+                else{
+                     throw std::out_of_range("Position lies beyond the vector's limits!");
+                }
+                
              }
             iterator erase( const_iterator first, const_iterator last ){
+                if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
                 iterator dummyF{first},dummyL{last};
-                 while(dummyL != v_end){
-                    *dummyF = *dummyL;
-                    dummyF++;
-                    dummyL++;
+                if(first >= this->begin() || last <= this->end()){    
+                    while(dummyL <= v_end){
+                        *dummyF = *dummyL;
+                        dummyF++;
+                        dummyL++;
+                    }
+                    v_end -= dummyL - dummyF;
+                    return first;
                 }
-                v_end -= dummyL - dummyF;
-                return first;
+                else{
+                     throw std::out_of_range("Position lies beyond the vector's limits!");
+                }
+                
             }
 
-            // iterator erase( const_iterator pos ){
-            //      v_end--;
-            //      for (iterator i{pos}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-            //      return iterator(&v_data[pos]);
-            //  }
-            //  iterator erase( iterator pos ){
-            //     v_end--;
-            //     for (iterator i{pos}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-            //     return iterator(&v_data[pos]);
-            // };
+             iterator erase( const_iterator pos ){
+                 if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
+                if(pos >= this->begin() || pos <= this->end()){       
+                  v_end--;
+                  for (iterator i{pos}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
+                  return iterator(&v_data[pos]);
+                }
+                else{
+                    throw std::out_of_range("Position lies beyond the vector's limits!");
+                }
+                  
+              }
+              iterator erase( iterator pos ){
+                  if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
+                if(pos >= this->begin() || pos <= this->end()){       
+                  v_end--;
+                  for (iterator i{pos}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
+                  return iterator(&v_data[pos]);
+                }
+                else{
+                    throw std::out_of_range("Position lies beyond the vector's limits!");
+                }
+                  
+              }
 
             // [V] Element access
             const_reference back( void ) const{
-                return v_data[v_end-1];
+                if (!empty()){
+                    return v_data[v_end-1];
+                }
+                else return this->front();
             }
             const_reference front( void ) const{
                 return v_data[0];
             }
             reference back( void ){
-                return v_data[v_end-1];
+                if (!empty()){
+                    return v_data[v_end-1];
+                }
+                else return this->front();
             }
             reference front( void ){
                 return v_data[0];
@@ -423,18 +592,31 @@ namespace sc {
                 using std::swap;
 
                 // Swap each member of the class.
-                swap( first_.m_end,      second_.m_end      );
-                swap( first_.m_capacity, second_.m_capacity );
-                swap( first_.m_storage,  second_.m_storage  );
+                swap( first_.v_end,      second_.v_end      );
+                swap( first_.v_capacity, second_.v_capacity );
+                swap( first_.v_storage,  second_.v_storage  );
             }
 
     };
 
     // [VI] Operators
     template <typename T>
-    bool operator==( const vector<T> &, const vector<T>& );
+    bool operator==( const vector<T> & V1, const vector<T>& V2){
+        bool result{true};
+        if(V1.size() == V2.size()){
+            for(size_t i{0}; i < V1.size();i++){
+                if(V1[i] != V2[i]){
+                    result = false;
+                }
+            }
+        }
+        return result;
+    };
     template <typename T>
-    bool operator!=( const vector<T> &, const vector<T>& );
+    bool operator!=( const vector<T> & V1, const vector<T>& V2){
+        bool result{!(V1 == V2)};
+        return result;
+    }
 
 } // namespace sc.
 #endif
