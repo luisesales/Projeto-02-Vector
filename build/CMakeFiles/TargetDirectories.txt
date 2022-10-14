@@ -1,7 +1,7 @@
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/CMakeFiles/edit_cache.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/CMakeFiles/rebuild_cache.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/all_tests.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/edit_cache.dir
-/home/eduardo.sales.090/Downloads/Vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/rebuild_cache.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/CMakeFiles/rebuild_cache.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/CMakeFiles/edit_cache.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/tests/CMakeFiles/edit_cache.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/tests/CMakeFiles/all_tests.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/tests/CMakeFiles/rebuild_cache.dir
+/mnt/d/Documentos/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir

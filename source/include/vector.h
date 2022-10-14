@@ -70,55 +70,62 @@ namespace sc {
                  iterator dummy = m_ptr--;
                 return dummy;
             }
-
+            /// offset increment operator
             iterator& operator+=(difference_type offset){
                 iterator &it{*this};
-                it+=offset;
+                it.m_ptr+=offset;
                 // TODO
                 return it;
             }
+            /// offset decrement operator
             iterator& operator-=(difference_type offset){
                 iterator &it{*this};
-                it-=offset;
+                it.m_ptr-=offset;
                 // TODO
                 return it;
             }
-
+            /// Lesser than operator
             friend bool operator<(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr < itb.m_ptr;
             }
+            ///Greater than operator
             friend bool operator>(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr > itb.m_ptr;
             }
+            ///Greater than or equal operator
             friend bool operator>=(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr >= itb.m_ptr;
             }
+            /// Lesser than or equal operator
             friend bool operator<=(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr <= itb.m_ptr;
             }
-
+            /// Sum operator + it
             friend iterator operator+( difference_type offset, iterator it ){
                 // TODO
-                iterator dummy = offset + it;
+                iterator dummy = offset + it.m_ptr;
                 return dummy;
             }
+            /// Sum operator it +
             friend iterator operator+( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy = it + offset;
+                iterator dummy = it.m_ptr + offset;
                 return dummy;
             }
+            /// Subtraction operator it -
             friend iterator operator-( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy = it - offset;
+                iterator dummy = it.m_ptr - offset;
                 return dummy;
             }            
+            /// Subtraction operator - it 
             friend iterator operator-(difference_type offset , iterator it){
                 // TODO
-                iterator dummy = offset - it;
+                iterator dummy = offset - it.m_ptr;
                 return dummy;
             }
 
@@ -179,14 +186,7 @@ namespace sc {
             /// Copy constructor.
             MyForwardConstIterator( const iterator & ) = default;
 
-            /// Pre-increment operator.
-            iterator operator++( void ){
-                // TODO
-                m_ptr++;
-                return *this;
-            }
-
-            /// Post-increment operator.
+             /// Post-increment operator.
             iterator operator++( int ){
                 // TODO
                 iterator dummy = m_ptr;
@@ -206,55 +206,62 @@ namespace sc {
                  iterator dummy = m_ptr--;
                 return dummy;
             }
-
+            /// offset increment operator
             iterator& operator+=(difference_type offset){
                 iterator &it{*this};
-                it+=offset;
+                it.m_ptr+=offset;
                 // TODO
                 return it;
             }
+            /// offset decrement operator
             iterator& operator-=(difference_type offset){
                 iterator &it{*this};
-                it-=offset;
+                it.m_ptr-=offset;
                 // TODO
                 return it;
             }
-
+            /// Lesser than operator
             friend bool operator<(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr < itb.m_ptr;
             }
+            ///Greater than operator
             friend bool operator>(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr > itb.m_ptr;
             }
+            ///Greater than or equal operator
             friend bool operator>=(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr >= itb.m_ptr;
             }
+            /// Lesser than or equal operator
             friend bool operator<=(const iterator& ita, const iterator& itb){
                 // TODO
                 return ita.m_ptr <= itb.m_ptr;
             }
-
+            /// Sum operator + it
             friend iterator operator+( difference_type offset, iterator it ){
                 // TODO
-                iterator dummy = offset + it;
+                iterator dummy = offset + it.m_ptr;
                 return dummy;
             }
+            /// Sum operator it +
             friend iterator operator+( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy = it + offset;
+                iterator dummy = it.m_ptr + offset;
                 return dummy;
             }
+            /// Subtraction operator it -
             friend iterator operator-( iterator it, difference_type offset ){
                 // TODO
-                iterator dummy = it - offset;
+                iterator dummy = it.m_ptr - offset;
                 return dummy;
             }            
+            /// Subtraction operator - it 
             friend iterator operator-(difference_type offset , iterator it){
                 // TODO
-                iterator dummy = offset - it;
+                iterator dummy = offset - it.m_ptr;
                 return dummy;
             }
 
@@ -277,7 +284,7 @@ namespace sc {
             }
 
             /// Stream extractor operator.
-            friend std::ostream& operator<<( std::ostream& os_, const MyForwardIterator &p_ )
+            friend std::ostream& operator<<( std::ostream& os_, const MyForwardConstIterator &p_ )
             {
                 os_ << "[@ " << p_.m_ptr  << ": " << *p_.m_ptr << " ]" ;
                 return os_;
@@ -307,14 +314,15 @@ namespace sc {
             pointer v_data;         //!< Stores the data.
             size_type s{0};
 
+            // Function that increases the size of the vector in a pow of 2 + an especified amount;
             void increase_size( size_type amount = 0){
-                v_capacity += amount + pow(2, s++);
+                v_capacity = amount;
                 pointer new_data = new T[v_capacity];
-                std::copy(this->begin(),this->end(),new_data);    
+                std::copy(this->begin(),this->end(),new_data);
                 this->~vector();
-                v_data = new_data;                
+                v_data = new_data;
             }
-
+            // Function that tests if the vector is full
             bool full( void ) const{
                 return v_end == v_capacity;
             }
@@ -340,7 +348,7 @@ namespace sc {
                 // Copy the elements from the target into the Vector
                 std::copy(target.cbegin(),target.cend(), v_data);
             }
-            // Inicialize the vector from a initializer list
+            // Initialize the vector from a initializer list
             vector( std::initializer_list<T> target){
                 v_capacity = target.size();
                 v_data = new T[v_capacity];
@@ -348,7 +356,7 @@ namespace sc {
                 // Copy the elements from the target into the Vector
                 std::copy(target.begin(),target.end(), v_data);
             }
-
+            // Initialize the vector from two iterators
             template < typename InputItr >
             vector( InputItr begin, InputItr end){
                 v_capacity = end - begin;
@@ -361,33 +369,42 @@ namespace sc {
             vector & operator=( const vector & target){
                 v_capacity = target.capacity();
                 v_data = new T[v_capacity];
-                v_end = target.size();  // Vector Starts Fuçç
+                v_end = target.size();  // Vector Starts Full
                 // Copy the elements from the target into the Vector.
                 std::copy(target.cbegin(),target.cend(), v_data);
             }
 
 
             //=== [II] ITERATORS
+            
+            // Returns iterator to the first element of the vector
             iterator begin( void ){
                 return iterator(&v_data[0]);
             }
+            // Returns iterator to the end of the vector
             iterator end( void ){
                 return iterator(&v_data[v_end]);
             }
+            // Returns a constant iterator to the first element of the vector
             const_iterator cbegin( void ) const{
                 return const_iterator(&v_data[0]);
             }
+            // Returns a constant iterator to the end of the vector
             const_iterator cend( void ) const{
                 return const_iterator(&v_data[v_end]);
             }
 
             // [III] Capacity
+
+            // Return the amount of elements stored in the vector
             size_type size( void ) const{
                 return v_end;
             }
+            // Return the amount of allocated space in the vector
             size_type capacity( void ) const{
                 return v_capacity;
             }
+            // Checks if the vector is empty
             bool empty( void ) const{
                 return v_end == 0;
             }
@@ -400,23 +417,34 @@ namespace sc {
                     v_data[i].~T();
                 v_end = 0;
             }
+
+            // Inserts a value in the first position of the vector
             void push_front( const_reference value){
                 if (full()) {
-                    increase_size();
+                    size_type new_capacity{v_capacity};
+                    if (v_capacity == 0) new_capacity++;
+                    else new_capacity *= 2;
+                    reserve(new_capacity);
                 }
                 for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i-1];
                 v_data[0] = value;
             }
+            // Inserts a value in the last position of the vector
             void push_back( const_reference value){
                  if (full()) {
-                    increase_size();
+                    size_type new_capacity{v_capacity};
+                    if (v_capacity == 0) new_capacity++;
+                    else new_capacity *= 2;
+                    reserve(new_capacity);
                 }
                 v_data[v_end++] = value;
             }
+            // Erases a value in the last position of the vector
             void pop_back( void ){
                 v_data[v_end-1].~T();
                 v_end--;
             }
+            // Erases a value in the first position of the vector
             void pop_front( void ){
                 v_end--;
                 for (size_type i{0}; i < v_end; i++) v_data[i] = v_data[i+1];
@@ -424,60 +452,132 @@ namespace sc {
                 
             }
 
+            // Inserts a Value in a determined iterator of the vector
             iterator insert( iterator pos_ , const_reference value_ ){
-                if (pos_ < v_end){
-                    for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
+                size_type position = pos_ - this->begin();
+                reserve(this->size()+position);                
+                if (position < v_end){
+                    for (size_type i{v_end}; i > position; i--) v_data[i] = v_data[i - 1];
                 }
-                else if(pos_ > v_capacity){                    
-                    increase_size(pos_);              
+                else {                    
+                    for (size_type i{v_end}; i < position; i++) v_data[i] = value_type();
                 }                     
-                v_data[pos_] = value_;
+                v_data[position] = value_;
                     // Update size.
-                v_end = std::max(pos_+1,v_end+1);
-                return iterator(&v_data[pos_]);
+                v_end = std::max(position+1,v_end+1);
+                return pos_;
             };
+            // Inserts a Value in a determined constant iterator of the vector
             iterator insert( const_iterator pos_ , const_reference value_ ){
-                 if (pos_ < v_end){
-                    for (size_type i{v_end}; i > 0; --i) v_data[i] = v_data[i - 1];
+                size_type position = pos_ - this->begin();
+                reserve(this->size()+position);                   
+                if (position < v_end){
+                    for (size_type i{v_end}; i > position; i--) v_data[i] = v_data[i - 1];
                 }
-                else if(pos_ > v_capacity){                    
-                    increase_size(pos_);              
+                else {                    
+                    for (size_type i{v_end}; i < position; i++) v_data[i] = value_type();
                 }                     
-                v_data[pos_] = value_;
+                v_data[position] = value_;
                     // Update size.
-                v_end = std::max(pos_+1,v_end+1);
-                return iterator(&v_data[pos_]);
+                v_end = std::max(position+1,v_end+1);
+                return pos_;
             }
 
+            // Inserts a range of values of the first iterator to the last iterator before the determined iterador of the vector
             template < typename InputItr >
-            iterator insert( iterator pos_ , InputItr first_, InputItr last_ );
+            iterator insert( iterator pos_ , InputItr first_, InputItr last_ ){
+                size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
+                reserve(this->size()+position);   
+                for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1 + count];
+                for(size_type i{position - count}; i < (position);i++){ 
+                    v_data[i] = *(first_ + aux);
+                    aux++;
+                }                                
+            }
+            // Inserts a constant range of values of the first iterator to the last iterator before the determined constant iterador of the vector
             template < typename InputItr >
-            iterator insert( const_iterator pos_ , InputItr first_, InputItr last_ );
+            iterator insert( const_iterator pos_ , InputItr first_, InputItr last_ ){
+                size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
+                reserve(this->size()+position);   
+                for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1 + count];
+                for(size_type i{position - count}; i < (position);i++){ 
+                    v_data[i] = *(first_ + aux);
+                    aux++;
+                }    
+            }
+            // Inserts a initializer list before the determined iterador of the vector
+            iterator insert( iterator pos_, const std::initializer_list< value_type >& ilist_ ){
+                size_type count = ilist_.size();
+                size_type position{pos_ - this->begin()}, aux{0};
+                reserve(this->size()+count); 
+                for (size_type i{v_end-1}; i > position; i--) {
+                    v_data[i+count] = v_data[i - 1];
+                }
+                v_end += count;
+                for (size_type i{position - count}; i < (position);i++) { 
+                    v_data[i] = *(ilist_.begin() + aux);
+                    aux++;
+                }
+            }
 
-            iterator insert( iterator pos_, const std::initializer_list< value_type >& ilist_ );
-            iterator insert( const_iterator pos_, const std::initializer_list< value_type >& ilist_ );
-
+            // Inserts a initializer list before the determined constant iterador of the vector
+            iterator insert( const_iterator pos_, const std::initializer_list< value_type >& ilist_ ){
+                size_type count = ilist_.size();
+                size_type position{pos_ - this->begin()}, aux{0};
+                reserve(this->size()+count);
+                for (size_type i{v_end-1}; i > position; i--) {
+                    v_data[i+count] = v_data[i - 1];
+                }
+                v_end += count;
+                for (size_type i{position - count}; i < (position);i++) { 
+                    v_data[i] = *(ilist_.begin() + aux);
+                    aux++;
+                }
+            }
+            // Reserves more space for data if the required amount is higher than the actual capacity
             void reserve( size_type pos ){
-                increase_size(pos);
+                if(pos > v_capacity){
+                    increase_size(pos);
+                    for (size_type i{v_end}; i < pos; i++) v_data[i] = value_type();
+                }
             };
+            // Shrinks the capacity to the amount of elements inserted in the vector
             void shrink_to_fit( void ){
                 if(v_capacity > v_end){
                     for(size_t i{v_end}; i < v_capacity;i++){
                         v_data[i].~T();
                     }
-                    v_capacity = v_end-1;
+                    v_capacity = v_end;
                 }
             };
+            // Replaces the last vector with a vector of count_ amount of elements of value_ value
+            void assign( size_type count_, const_reference value_ ){
+                reserve(count_);
+                for (size_type i{0}; i < count_; i++) v_data[i] = value_;
+                v_end = count_;
+            }
+            // Replaces the last vector with a vector of a initializer list size amount with elements of a initializer list values
+            void assign( const std::initializer_list<T>& ilist ){
+                size_type s = ilist.size();
+                reserve(s);
+                std::copy(ilist.begin(),ilist.end(), v_data);
+                v_end = s;
+            }
 
-            void assign( size_type count_, const_reference value_ );
-            void assign( const std::initializer_list<T>& ilist );
+            // Replaces the last vector with a vector of a iterators first till last values
             template < typename InputItr >
-            void assign( InputItr first, InputItr last );
+            void assign( InputItr first, InputItr last ){
+                size_type s = last - first;                
+                reserve(s);                
+                std::copy(*first,*last, v_data);
+                v_end = s;
+            }
 
+            // Erases a range of elements from the first iterator to the last iterator
             iterator erase( iterator first, iterator last ){
                 iterator dummy = first;
                 if(first >= this->begin() || last <= this->end()){    
-                    while(last < v_end){
+                    while(last < this->end()){
                         *first = *last;
                         first++;
                         last++;
@@ -490,11 +590,13 @@ namespace sc {
                 }
                 
              }
+
+            // Erases a range of elements from the first const iterator to the last const iterator
             iterator erase( const_iterator first, const_iterator last ){
                 if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
                 iterator dummyF{first},dummyL{last};
                 if(first >= this->begin() || last <= this->end()){    
-                    while(dummyL <= v_end){
+                    while(dummyL <= this->end()){
                         *dummyF = *dummyL;
                         dummyF++;
                         dummyL++;
@@ -507,7 +609,7 @@ namespace sc {
                 }
                 
             }
-
+            // Erases a element from the const iterator postition
              iterator erase( const_iterator pos ){
                  if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
                 if(pos >= this->begin() || pos <= this->end()){       
@@ -520,12 +622,13 @@ namespace sc {
                 }
                   
               }
+              // Erases a element from the iterator postition
               iterator erase( iterator pos ){
                   if (empty()) throw std::length_error{"Cannot erase from an empty vector!"};
                 if(pos >= this->begin() || pos <= this->end()){       
                   v_end--;
                   for (iterator i{pos}; i < iterator{ &v_data[v_end] }; i++) *i = *(i+1);
-                  return iterator(&v_data[pos]);
+                  return pos;
                 }
                 else{
                     throw std::out_of_range("Position lies beyond the vector's limits!");
@@ -534,39 +637,60 @@ namespace sc {
               }
 
             // [V] Element access
+
+            // Acess the constant reference of the last element of the vector
             const_reference back( void ) const{
                 if (!empty()){
                     return v_data[v_end-1];
                 }
                 else return this->front();
             }
+            // Acess the constant reference of the first element of the vector
             const_reference front( void ) const{
                 return v_data[0];
             }
+            // Acess the reference of the last element of the vector
             reference back( void ){
                 if (!empty()){
                     return v_data[v_end-1];
                 }
                 else return this->front();
             }
+            // Acess the reference of the first element of the vector
             reference front( void ){
                 return v_data[0];
             }
+            // Acess the constant reference of the pos position element of the vector
             const_reference operator[](size_type pos) const {
                 return v_data[pos];
             }
+            // Acess the reference of the pos position element of the vector
             reference operator[](size_type pos) {
                 return v_data[pos];
             }
+            // Acess the constant reference of the pos position element of the vector
             const_reference at( size_type pos) const{
-                return v_data[pos];
+                if (pos < v_end) {
+                    return v_data[pos];
+                }
+                 else{
+                     throw std::out_of_range("Position lies beyond the vector's limits!");
+                } 
             }
+            // Acess the reference of the pos position element of the vector
             reference at( size_type pos){
-                return v_data[pos];
+                 if (pos < v_end) {
+                    return v_data[pos];
+                }
+                 else{
+                     throw std::out_of_range("Position lies beyond the vector's limits!");
+                } 
             }
+            // Acess the pointer to the content inside the vector
             pointer data( void ){
                 return v_data;
             }
+            // Acess the constant reference to the content inside the vector
             const_reference data( void ) const{
                 return v_data;
             }
@@ -574,6 +698,8 @@ namespace sc {
             
 
             // [VII] Friend functions.
+
+            // Prints the vector on a ostream
             friend std::ostream & operator<<( std::ostream & os_, const vector<T> & v_ )
             {                
                 os_ << "{ ";
@@ -586,6 +712,7 @@ namespace sc {
 
                 return os_;
             }
+            // Swaps the contents of 2 vectors 
             friend void swap( vector<T> & first_, vector<T> & second_ )
             {
                 // enable ADL
@@ -600,10 +727,13 @@ namespace sc {
     };
 
     // [VI] Operators
+
+    // Checks if 2 vectors are the same 
     template <typename T>
     bool operator==( const vector<T> & V1, const vector<T>& V2){
-        bool result{true};
+        bool result{false};
         if(V1.size() == V2.size()){
+            result = true;
             for(size_t i{0}; i < V1.size();i++){
                 if(V1[i] != V2[i]){
                     result = false;
@@ -612,6 +742,7 @@ namespace sc {
         }
         return result;
     };
+    // Checks if 2 vectors are different
     template <typename T>
     bool operator!=( const vector<T> & V1, const vector<T>& V2){
         bool result{!(V1 == V2)};

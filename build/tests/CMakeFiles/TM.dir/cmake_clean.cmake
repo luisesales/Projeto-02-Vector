@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TM.dir/include/tm/test_manager.cpp.o"
-  "CMakeFiles/TM.dir/include/tm/test_manager.cpp.o.d"
   "libTM.a"
   "libTM.pdb"
 )

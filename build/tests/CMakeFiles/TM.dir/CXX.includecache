@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
+test_manager.h
+/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
+
+/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
+iostream
+-
+iomanip
+-
+algorithm
+-
+string
+-
+unordered_map
+-
+vector
+-
+
