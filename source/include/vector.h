@@ -488,7 +488,12 @@ namespace sc {
             iterator insert( iterator pos_ , InputItr first_, InputItr last_ ){
                 size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
                 reserve(this->size()+position);   
-                for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1 + count];
+                 if (position < v_end){
+                    for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1];
+                }
+                else {                    
+                    for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
+                }    
                 for(size_type i{position - count}; i < (position);i++){ 
                     v_data[i] = *(first_ + aux);
                     aux++;
@@ -497,13 +502,18 @@ namespace sc {
             // Inserts a constant range of values of the first iterator to the last iterator before the determined constant iterador of the vector
             template < typename InputItr >
             iterator insert( const_iterator pos_ , InputItr first_, InputItr last_ ){
-                size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
+                 size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
                 reserve(this->size()+position);   
-                for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1 + count];
+                 if (position < v_end){
+                    for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1];
+                }
+                else {                    
+                    for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
+                }    
                 for(size_type i{position - count}; i < (position);i++){ 
                     v_data[i] = *(first_ + aux);
                     aux++;
-                }    
+                }             
             }
             // Inserts a initializer list before the determined iterador of the vector
             iterator insert( iterator pos_, const std::initializer_list< value_type >& ilist_ ){
