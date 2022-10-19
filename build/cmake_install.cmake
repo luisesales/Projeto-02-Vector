@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/d/Documentos/T02-vector-individual-luisesales/source
+# Install script for directory: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/d/Documentos/T02-vector-individual-luisesales/build/tests/cmake_install.cmake")
+  include("/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/d/Documentos/T02-vector-individual-luisesales/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

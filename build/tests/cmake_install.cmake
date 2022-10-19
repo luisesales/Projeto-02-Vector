@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/d/Documentos/T02-vector-individual-luisesales/source/tests
+# Install script for directory: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

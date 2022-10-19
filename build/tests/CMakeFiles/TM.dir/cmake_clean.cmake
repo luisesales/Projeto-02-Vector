@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TM.dir/include/tm/test_manager.cpp.o"
-  "libTM.a"
   "libTM.pdb"
+  "libTM.a"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
+/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
 test_manager.h
-/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
+/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
 
-/mnt/d/Documentos/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
+/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.h
 iostream
 -
 iomanip
