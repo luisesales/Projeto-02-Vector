@@ -455,95 +455,144 @@ namespace sc {
             // Inserts a Value in a determined iterator of the vector
             iterator insert( iterator pos_ , const_reference value_ ){
                 size_type position = pos_ - this->begin();
-                reserve(this->size()+position);                
+                reserve(v_end+1);                
                 if (position < v_end){
                     for (size_type i{v_end}; i > position; i--) v_data[i] = v_data[i - 1];
+                    v_end+=1;
                 }
                 else {                    
                     for (size_type i{v_end}; i < position; i++) v_data[i] = value_type();
+                    v_end = position+1;
                 }                     
-                v_data[position] = value_;
-                    // Update size.
-                v_end = std::max(position+1,v_end+1);
-                return pos_;
+                v_data[position] = value_;                    
+                return iterator(&v_data[position]);  
             };
             // Inserts a Value in a determined constant iterator of the vector
             iterator insert( const_iterator pos_ , const_reference value_ ){
                 size_type position = pos_ - this->begin();
-                reserve(this->size()+position);                   
+                reserve(v_end+1);                   
                 if (position < v_end){
                     for (size_type i{v_end}; i > position; i--) v_data[i] = v_data[i - 1];
+                    v_end+=1;
                 }
                 else {                    
                     for (size_type i{v_end}; i < position; i++) v_data[i] = value_type();
+                    v_end = position+1;
                 }                     
-                v_data[position] = value_;
-                    // Update size.
-                v_end = std::max(position+1,v_end+1);
-                return pos_;
+                v_data[position] = value_;                    
+                return iterator(&v_data[position]);  
             }
 
             // Inserts a range of values of the first iterator to the last iterator before the determined iterador of the vector
             template < typename InputItr >
             iterator insert( iterator pos_ , InputItr first_, InputItr last_ ){
-                size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
-                reserve(this->size()+position);   
-                 if (position < v_end){
-                    for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1];
+                size_type count = (last_- first_);
+                size_type position{pos_ - this->begin()};
+                reserve(v_end+count);               
+                if (position < v_end){
+                    for (size_type i{v_end-1}; i >= position; i--) {                        
+                        v_data[i+count] = v_data[i];
+                        if (i == 0) {
+                            break;
+                        }
+                    }
+                    v_end+=count;
                 }
-                else {                    
+                else{
                     for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
-                }    
-                for(size_type i{position - count}; i < (position);i++){ 
+                    v_end = position+count;
+                }
+
+                size_type aux{0};
+                for (auto i{position}; i < (position+count);i++) { 
                     v_data[i] = *(first_ + aux);
                     aux++;
-                }                                
+                }
+                return iterator(&v_data[position]);                                
             }
+            
             // Inserts a constant range of values of the first iterator to the last iterator before the determined constant iterador of the vector
             template < typename InputItr >
             iterator insert( const_iterator pos_ , InputItr first_, InputItr last_ ){
-                 size_type position = pos_ - this->begin(), count = last_ - first_,aux{0};
-                reserve(this->size()+position);   
-                 if (position < v_end){
-                    for (size_type i{v_end}; i > position; i--) v_data[i+count] = v_data[i - 1];
+                size_type count = (last_- first_);
+                size_type position{pos_ - this->begin()};
+                reserve(v_end+count);               
+                if (position < v_end){
+                    for (size_type i{v_end-1}; i >= position; i--) {                        
+                        v_data[i+count] = v_data[i];
+                        if (i == 0) {
+                            break;
+                        }
+                    }
+                    v_end+=count;
                 }
-                else {                    
+                else{
                     for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
-                }    
-                for(size_type i{position - count}; i < (position);i++){ 
+                    v_end = position+count;
+                }
+
+                size_type aux{0};
+                for (auto i{position}; i < (position+count);i++) { 
                     v_data[i] = *(first_ + aux);
                     aux++;
-                }             
+                }
+                return iterator(&v_data[position]);          
             }
+
             // Inserts a initializer list before the determined iterador of the vector
             iterator insert( iterator pos_, const std::initializer_list< value_type >& ilist_ ){
-                size_type count = ilist_.size();
-                size_type position{pos_ - this->begin()}, aux{0};
-                reserve(this->size()+count); 
-                for (size_type i{v_end-1}; i > position; i--) {
-                    v_data[i+count] = v_data[i - 1];
+                size_type count = (ilist_.size());
+                size_type position{pos_ - this->begin()};
+                reserve(v_end+count);               
+                if (position < v_end){
+                    for (size_type i{v_end-1}; i >= position; i--) {                        
+                        v_data[i+count] = v_data[i];
+                        if (i == 0) {
+                            break;
+                        }
+                    }
+                    v_end+=count;
                 }
-                v_end += count;
-                for (size_type i{position - count}; i < (position);i++) { 
+                else{
+                    for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
+                    v_end = position+count;
+                }
+
+                size_type aux{0};
+                for (auto i{position}; i < (position+count);i++) { 
                     v_data[i] = *(ilist_.begin() + aux);
                     aux++;
                 }
+                return iterator(&v_data[position]); 
             }
 
             // Inserts a initializer list before the determined constant iterador of the vector
             iterator insert( const_iterator pos_, const std::initializer_list< value_type >& ilist_ ){
-                size_type count = ilist_.size();
-                size_type position{pos_ - this->begin()}, aux{0};
-                reserve(this->size()+count);
-                for (size_type i{v_end-1}; i > position; i--) {
-                    v_data[i+count] = v_data[i - 1];
+                size_type count = (ilist_.size());
+                size_type position{pos_ - this->begin()};
+                reserve(v_end+count);               
+                if (position < v_end){
+                    for (size_type i{v_end-1}; i >= position; i--) {                        
+                        v_data[i+count] = v_data[i];
+                        if (i == 0) {
+                            break;
+                        }
+                    }
+                    v_end+=count;
                 }
-                v_end += count;
-                for (size_type i{position - count}; i < (position);i++) { 
+                else{
+                    for (size_type i{v_end}; i < (position+count); i++) v_data[i] = value_type();
+                    v_end = position+count;
+                }
+
+                size_type aux{0};
+                for (auto i{position}; i < (position+count);i++) { 
                     v_data[i] = *(ilist_.begin() + aux);
                     aux++;
                 }
+                return iterator(&v_data[position]); 
             }
+
             // Reserves more space for data if the required amount is higher than the actual capacity
             void reserve( size_type pos ){
                 if(pos > v_capacity){

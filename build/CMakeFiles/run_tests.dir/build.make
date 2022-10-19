@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source
+CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build
+CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build
 
 # Utility rule file for run_tests.
 
@@ -71,6 +71,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

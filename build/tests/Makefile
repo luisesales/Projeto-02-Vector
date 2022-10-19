@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source
+CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build
+CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/progress.marks
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles 0
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/progress.marks
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/CMakeFiles/TM.dir/rule:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/TM.dir/rule
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/TM.dir/rule
 .PHONY : tests/CMakeFiles/TM.dir/rule
 
 # Convenience name for target.
@@ -122,12 +122,12 @@ TM: tests/CMakeFiles/TM.dir/rule
 
 # fast build rule for target.
 TM/fast:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/build
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/build
 .PHONY : TM/fast
 
 # Convenience name for target.
 tests/CMakeFiles/all_tests.dir/rule:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/all_tests.dir/rule
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/all_tests.dir/rule
 .PHONY : tests/CMakeFiles/all_tests.dir/rule
 
 # Convenience name for target.
@@ -137,7 +137,7 @@ all_tests: tests/CMakeFiles/all_tests.dir/rule
 
 # fast build rule for target.
 all_tests/fast:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/build
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/build
 .PHONY : all_tests/fast
 
 include/tm/test_manager.o: include/tm/test_manager.cpp.o
@@ -146,7 +146,7 @@ include/tm/test_manager.o: include/tm/test_manager.cpp.o
 
 # target to build an object file
 include/tm/test_manager.cpp.o:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o
 .PHONY : include/tm/test_manager.cpp.o
 
 include/tm/test_manager.i: include/tm/test_manager.cpp.i
@@ -155,7 +155,7 @@ include/tm/test_manager.i: include/tm/test_manager.cpp.i
 
 # target to preprocess a source file
 include/tm/test_manager.cpp.i:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.i
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.i
 .PHONY : include/tm/test_manager.cpp.i
 
 include/tm/test_manager.s: include/tm/test_manager.cpp.s
@@ -164,7 +164,7 @@ include/tm/test_manager.s: include/tm/test_manager.cpp.s
 
 # target to generate assembly for a file
 include/tm/test_manager.cpp.s:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.s
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/TM.dir/build.make tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.s
 .PHONY : include/tm/test_manager.cpp.s
 
 iterator_tests.o: iterator_tests.cpp.o
@@ -173,7 +173,7 @@ iterator_tests.o: iterator_tests.cpp.o
 
 # target to build an object file
 iterator_tests.cpp.o:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.o
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.o
 .PHONY : iterator_tests.cpp.o
 
 iterator_tests.i: iterator_tests.cpp.i
@@ -182,7 +182,7 @@ iterator_tests.i: iterator_tests.cpp.i
 
 # target to preprocess a source file
 iterator_tests.cpp.i:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.i
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.i
 .PHONY : iterator_tests.cpp.i
 
 iterator_tests.s: iterator_tests.cpp.s
@@ -191,7 +191,7 @@ iterator_tests.s: iterator_tests.cpp.s
 
 # target to generate assembly for a file
 iterator_tests.cpp.s:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.s
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/iterator_tests.cpp.s
 .PHONY : iterator_tests.cpp.s
 
 main.o: main.cpp.o
@@ -200,7 +200,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.o
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -209,7 +209,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.i
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -218,7 +218,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.s
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(MAKE) -f tests/CMakeFiles/all_tests.dir/build.make tests/CMakeFiles/all_tests.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -251,6 +251,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

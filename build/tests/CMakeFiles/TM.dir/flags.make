@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm 
+CXX_INCLUDES = -I/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests/include/tm 
 

@@ -1,7 +1,7 @@
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/rebuild_cache.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/edit_cache.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/rebuild_cache.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/edit_cache.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir
-/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/all_tests.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/run_tests.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/edit_cache.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/rebuild_cache.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/edit_cache.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir
+/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/all_tests.dir

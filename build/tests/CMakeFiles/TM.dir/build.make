@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source
+CMAKE_SOURCE_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build
+CMAKE_BINARY_DIR = /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build
 
 # Include any dependencies generated for this target.
 include tests/CMakeFiles/TM.dir/depend.make
@@ -58,17 +58,17 @@ include tests/CMakeFiles/TM.dir/progress.make
 include tests/CMakeFiles/TM.dir/flags.make
 
 tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o: tests/CMakeFiles/TM.dir/flags.make
-tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o"
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TM.dir/include/tm/test_manager.cpp.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
+tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o"
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TM.dir/include/tm/test_manager.cpp.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp
 
 tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TM.dir/include/tm/test_manager.cpp.i"
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp > CMakeFiles/TM.dir/include/tm/test_manager.cpp.i
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp > CMakeFiles/TM.dir/include/tm/test_manager.cpp.i
 
 tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TM.dir/include/tm/test_manager.cpp.s"
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp -o CMakeFiles/TM.dir/include/tm/test_manager.cpp.s
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests/include/tm/test_manager.cpp -o CMakeFiles/TM.dir/include/tm/test_manager.cpp.s
 
 tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o.requires:
 
@@ -91,9 +91,9 @@ TM_EXTERNAL_OBJECTS =
 tests/libTM.a: tests/CMakeFiles/TM.dir/include/tm/test_manager.cpp.o
 tests/libTM.a: tests/CMakeFiles/TM.dir/build.make
 tests/libTM.a: tests/CMakeFiles/TM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libTM.a"
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/TM.dir/cmake_clean_target.cmake
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TM.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libTM.a"
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/TM.dir/cmake_clean_target.cmake
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TM.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 tests/CMakeFiles/TM.dir/build: tests/libTM.a
@@ -105,10 +105,10 @@ tests/CMakeFiles/TM.dir/requires: tests/CMakeFiles/TM.dir/include/tm/test_manage
 .PHONY : tests/CMakeFiles/TM.dir/requires
 
 tests/CMakeFiles/TM.dir/clean:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/TM.dir/cmake_clean.cmake
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests && $(CMAKE_COMMAND) -P CMakeFiles/TM.dir/cmake_clean.cmake
 .PHONY : tests/CMakeFiles/TM.dir/clean
 
 tests/CMakeFiles/TM.dir/depend:
-	cd /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/source/tests /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/source/tests /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/tests/CMakeFiles/TM.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : tests/CMakeFiles/TM.dir/depend
 

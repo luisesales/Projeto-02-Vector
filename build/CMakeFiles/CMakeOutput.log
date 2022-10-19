@@ -10,33 +10,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d37f3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d37f3.dir/build.make CMakeFiles/cmTC_d37f3.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d37f3.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_d37f3.dir/testCXXCompiler.cxx.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_d37f3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d37f3.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_d37f3.dir/testCXXCompiler.cxx.o  -o cmTC_d37f3 
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_580ae/fast"
+/usr/bin/make -f CMakeFiles/cmTC_580ae.dir/build.make CMakeFiles/cmTC_580ae.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_580ae.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_580ae.dir/testCXXCompiler.cxx.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_580ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_580ae.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_580ae.dir/testCXXCompiler.cxx.o  -o cmTC_580ae 
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_23f1c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_23f1c.dir/build.make CMakeFiles/cmTC_23f1c.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_23f1c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23f1c.dir/link.txt --verbose=1
-/usr/bin/c++      -v CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_23f1c 
+Run Build Command:"/usr/bin/make" "cmTC_337b2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_337b2.dir/build.make CMakeFiles/cmTC_337b2.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_337b2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_337b2.dir/link.txt --verbose=1
+/usr/bin/c++      -v CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_337b2 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -48,24 +48,24 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_23f1c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSUtDoP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_23f1c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_23f1c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_337b2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cccI6Nsx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_337b2 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_337b2' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_23f1c/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_23f1c.dir/build.make CMakeFiles/cmTC_23f1c.dir/build]
-  ignore line: [make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_23f1c]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_23f1c.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_23f1c ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_337b2/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_337b2.dir/build.make CMakeFiles/cmTC_337b2.dir/build]
+  ignore line: [make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_337b2]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_337b2.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_337b2 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -77,13 +77,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_23f1c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccSUtDoP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_23f1c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_337b2' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cccI6Nsx.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_337b2 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccSUtDoP.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cccI6Nsx.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -101,7 +101,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_23f1c] ==> ignore
+    arg [cmTC_337b2] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -113,7 +113,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_23f1c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_337b2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -139,17 +139,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_abc00/fast"
-/usr/bin/make -f CMakeFiles/cmTC_abc00.dir/build.make CMakeFiles/cmTC_abc00.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_abc00.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_abc00.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_abc00
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_abc00.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_abc00.dir/feature_tests.cxx.o  -o cmTC_abc00 
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ab030/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ab030.dir/build.make CMakeFiles/cmTC_ab030.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ab030.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_ab030.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_ab030
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab030.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_ab030.dir/feature_tests.cxx.o  -o cmTC_ab030 
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -212,17 +212,17 @@ make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-indiv
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d0763/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d0763.dir/build.make CMakeFiles/cmTC_d0763.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_d0763.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_d0763.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_d0763
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0763.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_d0763.dir/feature_tests.cxx.o  -o cmTC_d0763 
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_dbcfc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dbcfc.dir/build.make CMakeFiles/cmTC_dbcfc.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_dbcfc.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_dbcfc.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_dbcfc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dbcfc.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_dbcfc.dir/feature_tests.cxx.o  -o cmTC_dbcfc 
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -285,17 +285,17 @@ make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-indiv
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4007a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4007a.dir/build.make CMakeFiles/cmTC_4007a.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_4007a.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_4007a.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_4007a
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4007a.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_4007a.dir/feature_tests.cxx.o  -o cmTC_4007a 
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a2197/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a2197.dir/build.make CMakeFiles/cmTC_a2197.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a2197.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_a2197.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a2197
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2197.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_a2197.dir/feature_tests.cxx.o  -o cmTC_a2197 
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -358,17 +358,17 @@ make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-indiv
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
+Change Dir: /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9b049/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9b049.dir/build.make CMakeFiles/cmTC_9b049.dir/build
-make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_9b049.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_9b049.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_9b049
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b049.dir/link.txt --verbose=1
-/usr/bin/c++       CMakeFiles/cmTC_9b049.dir/feature_tests.cxx.o  -o cmTC_9b049 
-make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_4771b/fast"
+/usr/bin/make -f CMakeFiles/cmTC_4771b.dir/build.make CMakeFiles/cmTC_4771b.dir/build
+make[1]: Entering directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_4771b.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_4771b.dir/feature_tests.cxx.o -c /home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_4771b
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4771b.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_4771b.dir/feature_tests.cxx.o  -o cmTC_4771b 
+make[1]: Leaving directory '/home/luis/Documentos/Programas/LP1/vector/T02-vector-individual-luisesales/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
